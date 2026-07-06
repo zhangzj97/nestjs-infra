@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { DataSource, EntitySchema } from "typeorm";
 
 import { OrmService } from "@/interface";
-import { getEnv } from "@/tools/env";
+import { getEnv } from "@/tools/getEnv";
 
 @Injectable()
 export class Impl1 implements OrmService {

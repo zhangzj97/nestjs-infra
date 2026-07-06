@@ -1,8 +1,8 @@
 import { DynamicModule } from "@nestjs/common";
 
 import { CacheService } from "@/interface";
-import { getEnv } from "@/tools/env";
-import { ImplStrategy } from "@/tools/implStrategy";
+import { getEnv } from "@/tools/getEnv";
+import { ImplStrategy } from "@/tools/ImplStrategy";
 
 import { Impl0 } from "./Impl0";
 import { Impl1 } from "./Impl1";

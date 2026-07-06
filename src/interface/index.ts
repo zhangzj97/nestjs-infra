@@ -1,6 +1,6 @@
 import { JwtService as NestJwtService } from "@nestjs/jwt";
 import { Redis } from "ioredis";
-import { DataSource, EntityManager } from "typeorm";
+import { DataSource } from "typeorm";
 
 export abstract class JwtService extends NestJwtService {}
 
@@ -56,6 +56,4 @@ export type AlsData = {
   success: boolean;
   userPayload: UserPayload | null;
   data: Record<string, unknown>;
-
-  entityManager: EntityManager | null;
 };

@@ -1,6 +1,6 @@
 import { JwtService } from "@nestjs/jwt";
 
-import { getEnv } from "@/tools/env";
+import { getEnv } from "@/tools/getEnv";
 
 export class Impl2 extends JwtService {
   constructor() {

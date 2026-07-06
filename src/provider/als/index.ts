@@ -1,7 +1,7 @@
 import { DynamicModule } from "@nestjs/common";
 
 import { AlsService } from "@/interface";
-import { ImplStrategy } from "@/tools/implStrategy";
+import { ImplStrategy } from "@/tools/ImplStrategy";
 
 import { Impl1 } from "./Impl1";
 
