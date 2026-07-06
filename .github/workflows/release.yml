@@ -1,0 +1,22 @@
+name: Build & Release Dist
+on:
+  push:
+    tags:
+      - "v*" # 推送v开头tag自动触发打包
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i
+      - run: npm run build # 生成dist
+      # 打包dist为压缩包
+      - run: tar -czf dist.tar.gz dist
+      # 创建Release并上传dist压缩包
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: dist.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
