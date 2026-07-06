@@ -4,11 +4,6 @@ pnpm approve-builds
 pnpm add typescript@latest tsx tsdown -D
 pnpm add oxfmt oxlint @types/node -D
 
-pnpm add typescript@latest tsx oxfmt oxlint cross-env @types/node -D
-pnpm add dotenv
-
-pnpm add @sapphire/snowflake
-
 pnpm add nest-winston winston winston-daily-rotate-file
 pnpm add class-validator class-transformer
 
