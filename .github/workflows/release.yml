@@ -2,21 +2,47 @@ name: Build & Release Dist
 on:
   push:
     tags:
-      - "v*" # 推送v开头tag自动触发打包
+      - "v*"
+
+# 关键：授予发布权限
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 20 }
-      - run: npm i
-      - run: npm run build # 生成dist
-      # 打包dist为压缩包
-      - run: tar -czf dist.tar.gz dist
-      # 创建Release并上传dist压缩包
-      - uses: softprops/action-gh-release@v1
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install pnpm globally
+        run: npm install -g pnpm
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/pnpm/store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build dist bundle
+        run: pnpm build
+
+      - name: Compress dist to tar
+        run: tar -czf dist.tar.gz ./dist package.json
+
+      - name: Generate GitHub Release
+        uses: softprops/action-gh-release@v2
         with:
           files: dist.tar.gz
+          name: ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
