@@ -3,13 +3,13 @@ type EnvConfig = {
 
   "server.port": number;
 
-  "cache.redis.enable": boolean;
+  "cache.redis.enabled": boolean;
   "cache.redis.host": string;
   "cache.redis.port": number;
   "cache.redis.password": string;
   "cache.redis.db": number;
 
-  "orm.enable": boolean;
+  "orm.enabled": boolean;
   "orm.host": string;
   "orm.port": number;
   "orm.username": string;
