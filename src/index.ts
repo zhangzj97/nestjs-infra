@@ -53,7 +53,7 @@ export class InfraModule {
           useClass: InfraServiceImpl,
         },
       ],
-      exports: [InfraService],
+      exports: [InfraService, AlsModule],
       module: InfraModule,
     };
   }
