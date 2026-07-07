@@ -18,6 +18,8 @@ import {
   InfraService, //
 } from "./interface";
 
+export { InfraService };
+
 @Injectable()
 class InfraServiceImpl implements InfraService {
   constructor(
