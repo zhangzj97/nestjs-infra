@@ -29,7 +29,7 @@ class InfraServiceImpl implements InfraService {
     public readonly jwt: JwtService, //
     public readonly orm: OrmService, //
   ) {
-    console.log(`注入InfraService `);
+    console.log(`注入InfraService `, { als });
   }
 }
 
