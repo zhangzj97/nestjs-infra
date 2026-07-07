@@ -1,4 +1,4 @@
-import { DynamicModule, Injectable, Module } from "@nestjs/common";
+import { DynamicModule, Injectable } from "@nestjs/common";
 import { EntitySchema } from "typeorm";
 
 import { AlsModule } from "./provider/als";
