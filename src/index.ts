@@ -6,9 +6,8 @@ import { CacheModule } from "./provider/cache";
 import { JwtModule } from "./provider/jwt";
 import { LoggerModule } from "./provider/logger";
 import { OrmModule } from "./provider/orm";
-import { getEnv } from "./tools/getEnv";
 
-export { getEnv };
+export { getEnv } from "./tools/getEnv";
 
 export {
   AlsService, //
