@@ -1,4 +1,4 @@
-import { DynamicModule, Injectable } from "@nestjs/common";
+import { DynamicModule, Injectable, Module } from "@nestjs/common";
 import { EntitySchema } from "typeorm";
 
 import { AlsModule } from "./provider/als";
@@ -21,17 +21,14 @@ import {
 export { InfraService };
 
 @Injectable()
-class InfraServiceImpl extends InfraService {
+class InfraServiceImpl implements InfraService {
   constructor(
-    public readonly als: AlsService, //
-    public readonly cache: CacheService, //
-    public readonly logger: LoggerService, //
-    public readonly jwt: JwtService, //
-    public readonly orm: OrmService, //
-  ) {
-    super();
-    console.log(`注入InfraService `, { als, cache, logger, jwt, orm });
-  }
+    public als: AlsService, //
+    public cache: CacheService, //
+    public logger: LoggerService, //
+    public jwt: JwtService, //
+    public orm: OrmService, //
+  ) {}
 }
 
 export class InfraModule {
