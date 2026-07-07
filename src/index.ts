@@ -7,6 +7,8 @@ import { JwtModule } from "./provider/jwt";
 import { LoggerModule } from "./provider/logger";
 import { OrmModule } from "./provider/orm";
 
+export { getEnv } from "./tools/getEnv";
+
 export {
   AlsService, //
   JwtService, //
