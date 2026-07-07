@@ -21,7 +21,7 @@ import {
 export { InfraService };
 
 @Injectable()
-class InfraServiceImpl implements InfraService {
+class InfraServiceImpl extends InfraService {
   constructor(
     public readonly als: AlsService, //
     public readonly cache: CacheService, //
@@ -29,6 +29,7 @@ class InfraServiceImpl implements InfraService {
     public readonly jwt: JwtService, //
     public readonly orm: OrmService, //
   ) {
+    super();
     console.log(`注入InfraService `, { als, cache, logger, jwt, orm });
   }
 }
