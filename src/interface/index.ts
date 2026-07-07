@@ -57,3 +57,11 @@ export type AlsData = {
   userPayload: UserPayload | null;
   data: Record<string, unknown>;
 };
+
+export abstract class InfraService {
+  abstract als: AlsService;
+  abstract cache: CacheService;
+  abstract logger: LoggerService;
+  abstract jwt: JwtService;
+  abstract orm: OrmService;
+}

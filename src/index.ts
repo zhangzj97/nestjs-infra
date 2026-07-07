@@ -1,4 +1,4 @@
-import { DynamicModule } from "@nestjs/common";
+import { DynamicModule, Injectable } from "@nestjs/common";
 import { EntitySchema } from "typeorm";
 
 import { AlsModule } from "./provider/als";
@@ -9,13 +9,25 @@ import { OrmModule } from "./provider/orm";
 
 export { getEnv } from "./tools/getEnv";
 
-export {
+import {
   AlsService, //
   JwtService, //
   OrmService, //
   CacheService, //
-  LoggerService, //
+  LoggerService,
+  InfraService, //
 } from "./interface";
+
+@Injectable()
+class InfraServiceImpl implements InfraService {
+  constructor(
+    public readonly als: AlsService, //
+    public readonly cache: CacheService, //
+    public readonly logger: LoggerService, //
+    public readonly jwt: JwtService, //
+    public readonly orm: OrmService, //
+  ) {}
+}
 
 export class InfraModule {
   static forRoot(options: { entityList: EntitySchema[] }): DynamicModule {
@@ -29,14 +41,13 @@ export class InfraModule {
         }), //
         LoggerModule.forRoot({}), //
       ],
-      providers: [],
-      exports: [
-        AlsModule, //
-        CacheModule, //
-        JwtModule, //
-        OrmModule, //
-        LoggerModule, //
+      providers: [
+        {
+          provide: InfraService,
+          useClass: InfraServiceImpl,
+        },
       ],
+      exports: [InfraService],
       module: InfraModule,
     };
   }
