@@ -214,8 +214,8 @@ importers:
         specifier: ^11.0.2
         version: 11.0.2(@nestjs/common@11.1.27(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@zzj/ts-utils':
-        specifier: https://github.com/zhangzj97/ts-utils/releases/download/v0.1.6/dist.tar.gz
-        version: ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.6/dist.tar.gz
+        specifier: https://github.com/zhangzj97/ts-utils/releases/download/v0.1.7/dist.tar.gz
+        version: ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.7/dist.tar.gz
       ioredis:
         specifier: ^5.11.1
         version: 5.11.1
@@ -1337,9 +1337,9 @@ packages:
     resolution: {integrity: sha512-aZbgViZrg1QNcG+LULa7nhZpJTZSLm/mXnHXnbAbjmN5aSa0y7V+wvv6+4WaBtpISJzThKy+PIPxc1Nq1EJ9mg==}
     engines: {node: '>= 14.0.0'}
 
-  ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.6/dist.tar.gz:
-    resolution: {integrity: sha512-kHzFdh8UhjA+a6qZ5QSPgh/U8UG/owlIZZX4D/aY8uKgOTJ2RN+rZt8UE/12N5RrEqztU6dXfkywbACc45nUvA==, tarball: https://github.com/zhangzj97/ts-utils/releases/download/v0.1.6/dist.tar.gz}
-    version: 0.1.6
+  ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.7/dist.tar.gz:
+    resolution: {integrity: sha512-wSyQSeIiCOpZF06hhrSDrvUvm4eRlKcn1jDOFinIv58CmZzsQGiSUkpNi3OER32jGRZcH7xDPW49uAXMBdFm/A==, tarball: https://github.com/zhangzj97/ts-utils/releases/download/v0.1.7/dist.tar.gz}
+    version: 0.1.7
     hasBin: true
 
   tsdown@0.22.3:
@@ -2326,7 +2326,7 @@ snapshots:
 
   triple-beam@1.4.1: {}
 
-  ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.6/dist.tar.gz:
+  ts-utils@https://github.com/zhangzj97/ts-utils/releases/download/v0.1.7/dist.tar.gz:
     dependencies:
       '@sapphire/snowflake': 3.5.5
 
